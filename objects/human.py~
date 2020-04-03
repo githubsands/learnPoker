@@ -1,0 +1,10 @@
+class Human:
+    """
+    Define the human class of the package
+    """
+
+    def __init__(self, age, race, style):
+        self.name = age
+        self.age = age
+        self.race = race 
+        self.style = style

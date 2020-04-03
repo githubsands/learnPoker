@@ -1,5 +1,32 @@
 #!/usr/bin/env python
 
+class Hand:
+    """
+    Define the hand class of the package"
+    """
+
+    def __init__(self):
+        self.round = "river"
+
+    def DealHands():
+        dealHands(self.currentDeck)
+
+    def HAND_ODDS():
+        return HAND_ODDS()
+
+    def HAND_PROBABILITIES():
+        return HAND_PROBABILTITES()
+
+def dealHands():
+    print("Running the flop")
+    yield n
+
+    print("Running the turn")
+    yield n
+
+    print("Running the river")
+    yield n
+
 def HANDS():
     hands = ["straight flush", "four of a kind", "full house", "flush", "straight", "three of a kind", "two pair", "one pair", "high card"]
     return hands
@@ -91,4 +118,4 @@ def printHands():
 def printHandProbabilities():
     probabilities = HAND_PROBABILITIES() 
     for x in probabilities:
-        print(
+        print(x)

@@ -7,7 +7,6 @@ def main():
     #hands.printHandOdds()
     hands.printHandProbabilities()
     print(rounds.NAME_OF_ROUNDS())
-    
 
 if __name__ == "__main__":
     main()

@@ -1,24 +1,13 @@
-# tight aggressive: you bet only when you have a good hand, but when you do, you don't back down. 
-#
-# loose aggressive: you bet often, but you don't let people push you into folding. 
-#
-# tight passive: you rarely bet, and when the actions get hot, you're content to fold anyway. 
-#
-# loose passive: you call all bets without dictating the game. 
-#
-# Questions to ask: 
-#
-# 1. What makes a poker player aggresssive?
-# 2  What makes a poker play passive? 
-#
-# Other Notes:
-# Dan Harrington
-# effective stack: the most chips you can lose in a hand. 
-# m-ratio = (effective stack)/(sum of blinds) 
-# play well aggresively && smart early in the game as possible
-# tough data science problems require you to extract as much data from the system in question, data does not always come clean
-# people are the process, play the people to beat the process
-# poker is not playing cards, its playing people. the cards are simply an instrument of data 
+class Player:
+    """
+    Define the hand class of the package"
+    """
+
+    def __init__(self, name):
+        self.name = "name"
+
+
+
 # your best source of information to combat uncertainity are the people holding the cards. it is their decision, their strategies, the behaviors, their tells
 # chaotic complex machines - called human minds 
 # game theory: take advantage of these predictions to influence the journey of the system and land it to your advantage. 
@@ -49,3 +38,4 @@
 #
 # rationale1: for raising big is to prevent blinds from calling for cheap. 
 # rationale2: 
+#
