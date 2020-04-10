@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package potrpc;
+
+service Pot {
+  // Queries
+  rpc GetAllChipsByColor(Chips) returns (PotReply) {}
+  rpc AddChips(Chips) returns (Chips) {}
+  rpc ReturnChips(Winner) returns (Chips) {}
+
+  // Notifications
+  rpc PotTotalNotification(PotTotalNotificationRequest) returns (stream PotTotalNotificationResponse)
+
+  // Control - if rpc changes the state of the pot service
+
+}
+
+message Winner {
+  string winnter = "";
+}
+
+message PotRepy {
+  string message = "";
+}
+
+message Chips {
+   int32 amount = 0;
+   string color = "";
+}
+
+message PotTotalNotificationRequest {}
+message PotTotalNotificationResponse {
+  repeated Chips = "";
+}

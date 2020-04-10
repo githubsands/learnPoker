@@ -1,0 +1,27 @@
+the CCM: Concepts underlying the cloud controller manager
+
+(these are dependent on the cloud provider)
+- node controller
+  * Get
+  * List
+  * Create
+  * Update
+  * Watch
+  * Delete
+- route controller
+- service controller
+  * List
+  * Get
+  * Watch
+  * Patch
+  * Update
+
+- volume controller
+
+https://kubernetes.io/docs/concepts/architecture/controller/
+
+1. Controller Pattern
+- controller tracks at least one k8 resource type
+- objects have a spec field that represents the desired state
+- each controller(s) has a resource, a resource can have multiplie controllers
+- controller sends messages to the API server
