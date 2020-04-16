@@ -5,6 +5,19 @@ class Player:
 
     def __init__(self, name):
         self.name = "name"
+        self.url = ""
+    
+    def get_url():
+        return self.url
+
+class human:
+    """
+    Defines the human of the game"
+    """
+
+    def __init__(self):
+        self.name = ""
+        self.age =  ""
 
 
 

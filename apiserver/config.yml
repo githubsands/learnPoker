@@ -1,0 +1,5 @@
+---
+TEMPLATES_AUTO_RELOAD:
+ENV:
+runtime: python38
+lobbyserver_url: localhost:8000

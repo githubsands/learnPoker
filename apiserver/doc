@@ -1,0 +1,4 @@
+roadmap 0.1:
+- working flask server that redirects to the address in the config file
+- tls
+- flask server that assigns sessions, keys, context
