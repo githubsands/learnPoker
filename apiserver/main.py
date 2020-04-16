@@ -6,10 +6,6 @@ class APIServer(Flask):
     def __init__(self, name):
         with open("config.yml", "r") as ymlfile:
             self.config = yaml.safe_load(ymlfile)
-            self.redirect = self.config["lobbyserver_url"]
-
-    def get_redirect():
-        return self.redirect
 
 app = APIServer(__name__)
 
@@ -22,4 +18,4 @@ def index():
 
 @app.route('/lobby')
 def redirect_to_lobby():
-    return redirect(url_for(app.get_redirect()), 302, Response=none)
+    return redirect(self.config["lobbyserver_url"], 302, Response=none)
