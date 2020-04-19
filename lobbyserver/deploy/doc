@@ -1,5 +1,0 @@
-deploy holds the scripts and necessary docker & k8 assets to launch a game
-
-v1.0.0 requirements:
-- gameserver and potserver are deployed in unisome after conditions are met in the lobbyserver
-- when a game no longer has players the gameserver and its corresponding potserver are closed
