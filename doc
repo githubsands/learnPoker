@@ -1,18 +1,8 @@
-Poker - Architecture
+Poker - Architecture:
 
-    A client, or poker player, partipates in 2 different states.
+Each player is redirected to the front facing apiserver to the lobbyserver
 
-    (1) Waiting in the lobby.
-
-    The lobby waits for n players to join the server.  When n players join the server they are redirected to the gameserver.
-
-    (2) Playing an actual poker game.
-
-    The poker game consist of three services to make things happen.  The gameserver, the potserver, and lastly the handserver
-
-    (3)
-
-    
+      client 1-n <-----> apiserver
 
 
       client 1 <-----> lobby
@@ -22,12 +12,14 @@ Poker - Architecture
                      |
       client n ------>
 
+Once lobby hits as specific 9 conistent client connects a game server is spun up and players are redirected here.
 
-      client 1 <-----> gameserver <----> potserver
-                     ^           ^
-                     |           |
-                     |           |
-                     |            ----------------> handserver
+
+      client 1 <-----> gameserver
+                     ^           
+                     |           
+                     |          
+                     |           
       client n ------>
 
 
