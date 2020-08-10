@@ -1,9 +1,8 @@
 Poker - Architecture:
 
-Each player is redirected to the front facing apiserver to the lobbyserver
+Each player is redirected from the front facing apiserver to the lobbyserver.  If there does not exist a lobbyserver it is spun up.
 
       client 1-n <-----> apiserver
-
 
       client 1 <-----> lobby
                      ^
@@ -12,39 +11,34 @@ Each player is redirected to the front facing apiserver to the lobbyserver
                      |
       client n ------>
 
-Once lobby hits as specific 9 conistent client connects a game server is spun up and players are redirected here.
-
+Once the lobby hits the specific 9 consistent client connections a game server is spun up and clients (players) are redirected here. Each game resides within its own machine.
 
       client 1 <-----> gameserver
-                     ^           
-                     |           
-                     |          
-                     |           
+                     ^
+                     |
+                     |
+                     |
       client n ------>
 
 
-
-
-
-
-
-
-
-
-   gameserver:
-        - starts a game loop
-        - builds table, or rotation
-        - sets big blind
-        - sets small blind
-        - server waits on anties
-        - 3 card delt n x
-        - server waits on 5 bets
-        - bet occurs
-        - calls deal 3 x n times
-        - each deal makes x rpc requests to n's
-
-   potserver:
-        - keeps track of all chips in the pot
-        - handserver keeps track of current hands
-
-
+Service Details:
+- APIServer
+    - Serves to redirect clients to its needed client
+    - Triggers K8s operators to build the lobbyserver if needed
+- LobbyServer
+    - Serves to keep a consistent connection with clients till there are enough players and/or a time limit is exhausted - (1)
+    - Once the above (1) is satisfied a K8 operator is triggered to spin up a gameserver
+    - The new existing gamesever is then health checked.  if the health check is successful the lobby server redirects all clients to the new gameserver
+- GameServer
+    - starts a game loop
+    - builds table, or rotation
+    - sets big blind
+    - sets small blind
+    - server waits on anties
+    - 3 card delt n x
+    - server waits on 5 bets
+    - bet occurs
+    - calls deal 3 x n times
+    - each deal makes x rpc requests to n's
+    - note: sense the game of poker is fundamentally happens in turns most methods do not need to be async. a async call for example would be to get the current pot amount, all actions that
+        can happen out of turn.
