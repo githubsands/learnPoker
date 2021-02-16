@@ -1,0 +1,12 @@
+lobbyserver accepts incoming connects from clients, or players, and puts them in a waiting room.  lobbyserver then redirects all clients to
+the gameserver after a few conditions have been met.
+
+these conditions are: 3+ players and 30 minutes has passed, or the maximum number, 9, of players have entered the lobbyroom.
+
+v1.0.0 requirements:
+- redirect under conditions mentioned above
+- 1 waiting room per lobby. future releases will support multiplie waiting rooms in a server
+- gameserver is only spun up after a few conditions have been met.
+
+unassigned requirements and future releases:
+- user registration and a postgressql database
